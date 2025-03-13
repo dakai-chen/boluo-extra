@@ -1,0 +1,17 @@
+[package]
+name = "boluo-extra"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+boluo-core = "0.5"
+cookie = { version = "0.18", features = ["percent-encode"], optional = true }
+either = { version = "1", optional = true }
+
+[features]
+default = []
+cookie = ["dep:cookie", "dep:either"]
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
